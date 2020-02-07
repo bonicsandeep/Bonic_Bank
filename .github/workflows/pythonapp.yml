@@ -59,16 +59,16 @@ def getDetails(acnum):
 def otp(Index,Otp_Sent):
     from twilio.rest import Client
     # Your Account SID from twilio.com/console
-    account_sid = "AC4eda8dd106368363e0d0a5a5462ae7e5"
+    account_sid = "ACxxxxxxxxxxxxxxxxxxxxx" # Twilio sid 
     # Your Auth Token from twilio.com/console
     s="+91"+str(List_Cell_No[Index])
-    auth_token  = "1226a2d7c6ccd55b41d652c3d1eb722c"
+    auth_token  = "xxxxxxxxxxxx"    # Twilio auth token 
 
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
         to=s, 
-        from_="+12015094946",
+        from_="xxxxxxxxxx", # Twilio Phone number 
         body=Otp_Sent)
 
     print(message.sid)
